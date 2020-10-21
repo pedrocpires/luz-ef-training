@@ -1,0 +1,9 @@
+
+A ordenação com 1000 elementos foi executada em 17229ms
+A ordenação com 1000 elementos foi executada em 8650ms
+A ordenação com 1000 elementos foi executada em 12061ms
+A ordenação com 1000 elementos foi executada em 16459ms
+A ordenação com 1000 elementos foi executada em 17190ms
+A ordenação com 1000 elementos foi executada em 37343ms
+A ordenação com 1000 elementos foi executada em 11009ms
+A ordenação com 10000 elementos foi executada em 286216ms
