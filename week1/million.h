@@ -5,10 +5,13 @@
 
 using namespace std;
 
-vector<float> million()
+int *million()
 {
-    vector<float> v(10000000, 0);
-    for (int i = 0; i < 10000000; i++)
+
+    int size = 10000000;
+    int *v;
+    v = allocVector(size);
+    for (int i = 0; i < size; i++)
     {
         v[i] = rand() % 100;
     }

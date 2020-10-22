@@ -7,16 +7,16 @@
 using namespace std;
 
 // Executa o bubbleSort do vetor.
-vector<float> bubbleSort(vector<float> v)
+int *bubbleSort(int *v)
 {
-    float timer;
+    int timer;
     clock_t t_start, t_end;
     t_start = clock();
 
-    float aux;
-    for (int i = 0; i < v.size(); i++)
+    int aux;
+    for (int i = 0; i < size; i++)
     {
-        for (int j = 0; j < v.size() - 1; j++)
+        for (int j = 0; j < size - 1; j++)
         {
             if (v[j] > v[j + 1])
             {
@@ -29,21 +29,21 @@ vector<float> bubbleSort(vector<float> v)
     t_end = clock();
     timer = difftime(t_end, t_start);
 
-    time_log(timer, v.size());
+    time_log(timer, size);
 
     return v;
 }
 
 // Executa o insertionSort do vetor.
-vector<float> insertionSort(vector<float> v)
+int *insertionSort(int *v)
 {
-    float timer;
+    int timer;
     clock_t t_start, t_end;
     t_start = clock();
 
-    float aux;
+    int aux;
 
-    for (int i = 1; i < v.size(); i++)
+    for (int i = 1; i < size; i++)
     {
         int j = i;
         while (v[j] < v[j - 1])
@@ -58,29 +58,29 @@ vector<float> insertionSort(vector<float> v)
     t_end = clock();
     timer = difftime(t_end, t_start);
 
-    time_log(timer, v.size());
+    time_log(timer, size);
 
     return v;
 }
 
 // Executa o selectionSort do vetor.
-vector<float> selectionSort(vector<float> v)
+int *selectionSort(int *v)
 {
-    float timer;
+    int timer;
     clock_t t_start, t_end;
     t_start = clock();
 
-    for (int i = 0; i < v.size(); i++)
+    for (int i = 0; i < size; i++)
     {
         int smaller = i;
-        for (int j = i; j < v.size(); j++)
+        for (int j = i; j < size; j++)
         {
             if (v[j] < v[smaller])
             {
                 smaller = j;
             }
         }
-        float aux = v[i];
+        int aux = v[i];
         v[i] = v[smaller];
         v[smaller] = aux;
     }
@@ -88,7 +88,7 @@ vector<float> selectionSort(vector<float> v)
     t_end = clock();
     timer = difftime(t_end, t_start);
 
-    time_log(timer, v.size());
+    time_log(timer, size);
 
     return v;
 }

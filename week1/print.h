@@ -4,11 +4,12 @@
 using namespace std;
 
 // Função para imprimir o vetor.
-void printVector(vector<float> v)
+void printVector(int *v)
 {
     int i;
     cout << " | ";
-    for (i = 0; i < v.size(); i++)
+
+    for (i = 0; i < size; i++)
     {
         cout << v[i] << " | ";
     };

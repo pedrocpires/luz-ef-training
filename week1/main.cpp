@@ -13,10 +13,6 @@ using namespace std;
 // Função principal, executa ao iniciar o programa.
 int main()
 {
-    // vector<float> v{10, 20, 50, 30, 40, 50, 60, 10, 20};
-    // vector<float> v{10, 20, 30, 40, 50, 60, 70, 80, 90};
-    // vector<float> v{90, 80, 70, 60, 50, 40, 30, 20, 10};
-
     char option;
 
     while (true)

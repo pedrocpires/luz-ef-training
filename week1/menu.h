@@ -1,8 +1,11 @@
 #include <iostream>
 
+#include "allocvector.h"
 #include "million.h"
 
 using namespace std;
+
+int size;
 
 char menuSort()
 {
@@ -16,11 +19,11 @@ char menuSort()
     return option;
 }
 
-vector<float> menuInsertVector()
+int *menuInsertVector()
 {
-    int size;
+    // int size;
     char option;
-    float n;
+    int n;
 
     while (true)
     {
@@ -41,7 +44,8 @@ vector<float> menuInsertVector()
             cout << "Opção inválida. Por favor, digite um número maior que 2.";
         }
     }
-    vector<float> v(size, 0);
+    int *v;
+    v = allocVector(size);
 
     while (true)
     {
@@ -65,7 +69,6 @@ vector<float> menuInsertVector()
         {
             for (int i = 0; i < size; i++)
             {
-                float n;
                 v[i] = rand() % 100;
             }
             break;
@@ -84,7 +87,7 @@ vector<float> menuInsertVector()
     return v;
 }
 
-vector<float> menuVector()
+int *menuVector()
 {
     char option;
 
