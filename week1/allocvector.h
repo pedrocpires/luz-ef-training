@@ -1,11 +1,20 @@
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 
-int *allocVector(int size)
+using namespace std;
+
+void allocVector(int **v, int size)
 {
-    int *aux;
+    (*v) = (int *)malloc(size * sizeof(int));
 
-    aux = (int *)malloc(size * sizeof(int));
-
-    return aux;
+    if (!v)
+    {
+        cout << "Espaço insuficiente para alocar memória \n\n";
+        exit(1);
+    }
+    else
+    {
+        cout << "Espaço alocado para vetor. \n\n";
+    }
 }

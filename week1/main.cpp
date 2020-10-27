@@ -17,23 +17,31 @@ int main()
 
     while (true)
     {
+        int size;
+        int *vector;
         option = menuSort();
         if (option == '1')
         {
             cout << "\nVocê escolheu a opção Bubble Sort para ordernar.\n\n";
-            printVector(bubbleSort(menuVector()));
+            menuVector(&vector, &size);
+            bubbleSort(vector, size);
+            printVector(vector, size);
             break;
         }
         else if (option == '2')
         {
             cout << "\nVocê escolheu a opção Insertion Sort para ordernar.\n\n";
-            printVector(insertionSort(menuVector()));
+            menuVector(&vector, &size);
+            insertionSort(vector, size);
+            printVector(vector, size);
             break;
         }
         else if (option == '3')
         {
             cout << "\nVocê escolheu a opção Selection Sort para ordernar.\n\n";
-            printVector(selectionSort(menuVector()));
+            menuVector(&vector, &size);
+            selectionSort(vector, size);
+            printVector(vector, size);
             break;
         }
         else if (option == '0')

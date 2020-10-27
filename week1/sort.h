@@ -7,7 +7,7 @@
 using namespace std;
 
 // Executa o bubbleSort do vetor.
-int *bubbleSort(int *v)
+void bubbleSort(int *v, int size)
 {
     int timer;
     clock_t t_start, t_end;
@@ -16,7 +16,7 @@ int *bubbleSort(int *v)
     int aux;
     for (int i = 0; i < size; i++)
     {
-        for (int j = 0; j < size - 1; j++)
+        for (int j = 0; j < size; j++)
         {
             if (v[j] > v[j + 1])
             {
@@ -30,12 +30,10 @@ int *bubbleSort(int *v)
     timer = difftime(t_end, t_start);
 
     time_log(timer, size);
-
-    return v;
 }
 
 // Executa o insertionSort do vetor.
-int *insertionSort(int *v)
+void insertionSort(int *v, int size)
 {
     int timer;
     clock_t t_start, t_end;
@@ -59,12 +57,10 @@ int *insertionSort(int *v)
     timer = difftime(t_end, t_start);
 
     time_log(timer, size);
-
-    return v;
 }
 
 // Executa o selectionSort do vetor.
-int *selectionSort(int *v)
+void selectionSort(int *v, int size)
 {
     int timer;
     clock_t t_start, t_end;
@@ -89,6 +85,4 @@ int *selectionSort(int *v)
     timer = difftime(t_end, t_start);
 
     time_log(timer, size);
-
-    return v;
 }

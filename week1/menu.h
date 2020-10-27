@@ -5,8 +5,6 @@
 
 using namespace std;
 
-int size;
-
 char menuSort()
 {
     char option;
@@ -19,9 +17,8 @@ char menuSort()
     return option;
 }
 
-int *menuInsertVector()
+void menuInsertVector(int **v, int *size)
 {
-    // int size;
     char option;
     int n;
 
@@ -29,48 +26,49 @@ int *menuInsertVector()
     {
         cout << "\nDigite o tamanho do vetor: (0 para sair)\n";
         cout << "Tamanho: ";
-        cin >> size;
-        if (size >= 2)
+        cin >> *size;
+        if (*size >= 2 && *size <= 10000000)
         {
             break;
         }
-        else if (size == 0)
+        else if (*size == 0)
         {
             cout << "\nBye!\n\n";
             exit(0);
         }
         else
         {
-            cout << "Opção inválida. Por favor, digite um número maior que 2.";
+            cout << "Opção inválida. Por favor, digite um valor entre 2 e 10 milhões.";
         }
     }
-    int *v;
-    v = allocVector(size);
 
     while (true)
     {
         cout << "\nEscolha uma opção para preencher o vetor\n\n";
-        cout << "[ 1 ] Inserir " << size << " números manualmente\n";
-        cout << "[ 2 ] Inserir " << size << " números aleatórios\n";
+        cout << "[ 1 ] Inserir " << *size << " números manualmente\n";
+        cout << "[ 2 ] Inserir " << *size << " números aleatórios\n";
         cout << "\n[ 0 ] Sair\n\n";
+
         cin >> option;
+        allocVector(v, *size);
 
         if (option == '1')
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < *size; i++)
             {
                 cout << "\nDigite o " << i + 1 << "° número:";
                 cin >> n;
-                v[i] = n;
+                (*v)[i] = n;
             }
             break;
         }
         else if (option == '2')
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < *size; i++)
             {
-                v[i] = rand() % 100;
+                (*v)[i] = (rand() % 100);
             }
+
             break;
         }
         else if (option == '2')
@@ -83,11 +81,9 @@ int *menuInsertVector()
             cout << "Opção inválida. Por favor, digite um número maior que 2.";
         }
     }
-
-    return v;
 }
 
-int *menuVector()
+void menuVector(int **v, int *size)
 {
     char option;
 
@@ -100,12 +96,12 @@ int *menuVector()
         cin >> option;
         if (option == '1')
         {
-            return menuInsertVector();
+            menuInsertVector(v, size);
             break;
         }
         else if (option == '2')
         {
-            return million();
+            million(v, size);
             break;
         }
         else if (option == '0')

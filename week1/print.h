@@ -4,7 +4,7 @@
 using namespace std;
 
 // Função para imprimir o vetor.
-void printVector(int *v)
+void printVector(int *v, int size)
 {
     int i;
     cout << " | ";
@@ -14,10 +14,4 @@ void printVector(int *v)
         cout << v[i] << " | ";
     };
     cout << "\n\n";
-}
-
-// Função para imprimir um separador padrão.
-void separator()
-{
-    printf("\n\n|==================================================|\n\n");
 }
