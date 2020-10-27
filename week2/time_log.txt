@@ -1,0 +1,11 @@
+
+A ordenação com 10000000 elementos foi executada em 808121ms
+A ordenação com 10000000 elementos foi executada em 812906ms
+A ordenação com 48 elementos foi executada em 251ms
+A ordenação com 20 elementos foi executada em 13ms
+A ordenação com 10 elementos foi executada em 212ms
+A ordenação com 10 elementos foi executada em 148ms
+A ordenação com 10 elementos foi executada em 10ms
+A ordenação com 5000 elementos foi executada em 3037ms
+A ordenação com 50000 elementos foi executada em 15642ms
+A ordenação com 10000000 elementos foi executada em 788347ms
