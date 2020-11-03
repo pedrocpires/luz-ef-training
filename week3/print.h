@@ -4,22 +4,29 @@
 
 using namespace std;
 
-void printVector(int *v, int size)
-{
-    int i;
-    cout << " | ";
+#include "linkedFunctions.h"
 
-    for (i = 0; i < size; i++)
+void printList(lists **firstList)
+{
+    if ((*firstList)->size == 0)
     {
-        if (v[i] != 0)
+        cout << "\nA lista está vazia!";
+    }
+    else
+    {
+        linked *node = (*firstList)->start;
+
+        cout << "\n | ";
+        while (node != NULL)
         {
-            cout << v[i] << " | ";
+            cout << node->n << " | ";
+            node = node->next;
         }
-        else
-        {
-            cout << "--"
-                 << " | ";
-        }
-    };
-    cout << "\n\n";
+        cout << "\n";
+    }
+}
+
+int sizeList(lists **firstList)
+{
+    return (*firstList)->size;
 }
